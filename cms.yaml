@@ -1,0 +1,94 @@
+id: http://w3id.org/ontogpt/collection_management
+name: collection_management
+title: collection_management
+description: >-
+  collection management extraction
+
+imports:
+  - linkml:types
+  - core
+
+default_range: string
+
+classes:
+  CollectionManagement:
+    tree_root: true
+    attributes:
+      taxonomy:
+        description: Name of the taxonomy
+        range: Taxonomy
+        annotations:
+          annotators: gilda:, sqlite:obo:ncbitaxon
+      species:
+        description: Name of the species 
+        range: Species
+        annotations: 
+          annotators: gilda:, sqlite:obo:ncbitaxon
+      habitat:
+        annotations:
+          annotators: gilda:, sqlite:obo:ncbitaxon
+        multivalued: true
+        range: Habitat
+
+  Habitat:
+    is_a: CompoundExpression
+    attributes:
+      location:
+        range: Location
+      environment:
+        range: Environment
+      environmental_material:
+        range: EnvironmentalMaterial
+      method:
+        range: Method
+
+  Taxonomy:
+    is_a: NamedEntity
+    id_prefixes:
+      - TAXONOMY
+    annotations:
+      annotators: gilda:, sqlite:obo:ncbitaxon
+
+  Species:
+    is_a: NamedEntity
+    annotations:
+      annotators: gilda:, sqlite:obo:ncbitaxon
+
+  Location:
+    is_a: NamedEntity
+    annotations:
+      annotators: sqlite:obo:envo, bioportal:GAZ
+
+  EnvironmentalMaterial:
+    is_a: NamedEntity
+    annotations:
+      annotators: sqlite:obo:envo, bioportal:ENVTHES
+
+  Environment:
+    is_a: NamedEntity
+    annotations:
+      annotators: sqlite:obo:envo, bioportal:ENVTHES
+
+  Method:
+    is_a: NamedEntity
+    annotations:
+      annotators: bioportal:ENVTHES
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
