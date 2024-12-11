@@ -15,15 +15,15 @@ classes:
     tree_root: true
     attributes:
       taxonomy:
-        description: Name of the taxonomy
         range: Taxonomy
         annotations:
           annotators: gilda:, sqlite:obo:ncbitaxon
+        multivalued: true
       species:
-        description: Name of the species 
         range: Species
-        annotations: 
+        annotations:
           annotators: gilda:, sqlite:obo:ncbitaxon
+        multivalued: true
       habitat:
         annotations:
           annotators: gilda:, sqlite:obo:ncbitaxon
@@ -45,50 +45,46 @@ classes:
   Taxonomy:
     is_a: NamedEntity
     id_prefixes:
-      - TAXONOMY
+      - NCBITaxon
+      - EFO
     annotations:
       annotators: gilda:, sqlite:obo:ncbitaxon
 
   Species:
     is_a: NamedEntity
+    id_prefixes:
+      - NCBITaxon
+      - EFO
     annotations:
       annotators: gilda:, sqlite:obo:ncbitaxon
 
   Location:
     is_a: NamedEntity
+    id_prefixes:
+      - ENVO
+      - GAZ
     annotations:
       annotators: sqlite:obo:envo, bioportal:GAZ
 
   EnvironmentalMaterial:
     is_a: NamedEntity
+    id_prefixes:
+      - ENVO
+      - ENVTHES
     annotations:
       annotators: sqlite:obo:envo, bioportal:ENVTHES
 
   Environment:
     is_a: NamedEntity
+    id_prefixes:
+      - ENVO
+      - ENVTHES
     annotations:
       annotators: sqlite:obo:envo, bioportal:ENVTHES
 
   Method:
     is_a: NamedEntity
+    id_prefixes:
+      - ENVTHES
     annotations:
       annotators: bioportal:ENVTHES
-
-
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
