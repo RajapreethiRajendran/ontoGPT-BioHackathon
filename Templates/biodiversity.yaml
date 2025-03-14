@@ -1,8 +1,15 @@
-id: http://w3id.org/ontogpt/collection_management
+id: http://w3id.org/ontogpt/biodiversity
 name: collection_management
 title: collection_management
 description: >-
   collection management extraction
+
+prefixes:
+  simple: https://example.com/simple_schema/
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  linkml: https://w3id.org/linkml/
+  NCBITaxon: http://purl.obolibrary.org/obo/NCBITAXON_
+
 
 imports:
   - linkml:types
@@ -46,7 +53,6 @@ classes:
     is_a: NamedEntity
     id_prefixes:
       - NCBITaxon
-      - EFO
     annotations:
       annotators: gilda:, sqlite:obo:ncbitaxon
 
@@ -54,7 +60,6 @@ classes:
     is_a: NamedEntity
     id_prefixes:
       - NCBITaxon
-      - EFO
     annotations:
       annotators: gilda:, sqlite:obo:ncbitaxon
 
@@ -62,9 +67,9 @@ classes:
     is_a: NamedEntity
     id_prefixes:
       - ENVO
-      - GAZ
+      - ENVTHES
     annotations:
-      annotators: sqlite:obo:envo, bioportal:GAZ
+      annotators: sqlite:obo:envo, bioportal:ENVTHES
 
   EnvironmentalMaterial:
     is_a: NamedEntity
@@ -85,6 +90,7 @@ classes:
   Method:
     is_a: NamedEntity
     id_prefixes:
+      - ENVO
       - ENVTHES
     annotations:
       annotators: bioportal:ENVTHES

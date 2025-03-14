@@ -1,0 +1,79 @@
+input_text: |
+  Montanes Grassgebiet mit Buschgruppen. Hang nach Westen abfallend. Steiniger, von Asche dunkel gefärbter Sand- Lateritboden. Begleitflora vielfältig, u.a. Helichrysum spp., Vernonia spp., Gladiolus sp., Echinops gigantea , Berkheya sp., Lippia javani
+raw_completion_output: |-
+  Here are the extracted entities in the requested format:
+
+  taxonomy: Ascomycota; Fernandesiaceae; Gesneriaceae; Helichrysum genus; Lippiaceae; Poaceae; Verneraceae
+  species: Helichrysum spp.; Vernonia spp.; Gladiolus sp.; Echinops gigantea; Berkheya sp.
+  habitat: Montanes Grassgebiet
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  location: <the value for location>
+  environment: <the value for environment>
+  environmental_material: <the value for environmental_material>
+  method: <the value for method>
+
+
+  Text:
+  Montanes Grassgebiet
+
+  ===
+
+extracted_object:
+  taxonomy:
+    - NCBITaxon:4890
+    - AUTO:Fernandesiaceae
+    - NCBITaxon:26122
+    - AUTO:Helichrysum%20genus
+    - AUTO:Lippiaceae
+    - NCBITaxon:4479
+    - AUTO:Verneraceae
+  species:
+    - AUTO:Helichrysum%20spp.
+    - AUTO:Vernonia%20spp.
+    - NCBITaxon:3136809
+    - AUTO:Echinops%20gigantea
+    - NCBITaxon:3136807
+  habitat:
+    - location: AUTO:Montanes%20Grassgebiet
+named_entities:
+  - id: NCBITaxon:4890
+    label: Ascomycota
+  - id: AUTO:Fernandesiaceae
+    label: Fernandesiaceae
+  - id: NCBITaxon:26122
+    label: Gesneriaceae
+  - id: AUTO:Helichrysum%20genus
+    label: Helichrysum genus
+  - id: AUTO:Lippiaceae
+    label: Lippiaceae
+  - id: NCBITaxon:4479
+    label: Poaceae
+  - id: AUTO:Verneraceae
+    label: Verneraceae
+  - id: AUTO:Helichrysum%20spp.
+    label: Helichrysum spp.
+    original_spans:
+      - 155:170
+  - id: AUTO:Vernonia%20spp.
+    label: Vernonia spp.
+    original_spans:
+      - 173:185
+  - id: NCBITaxon:3136809
+    label: Gladiolus sp.
+    original_spans:
+      - 188:200
+  - id: AUTO:Echinops%20gigantea
+    label: Echinops gigantea
+    original_spans:
+      - 203:219
+  - id: NCBITaxon:3136807
+    label: Berkheya sp.
+    original_spans:
+      - 223:234
+  - id: AUTO:Montanes%20Grassgebiet
+    label: Montanes Grassgebiet
+    original_spans:
+      - 0:19
+

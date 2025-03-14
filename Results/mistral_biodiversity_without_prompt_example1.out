@@ -1,0 +1,75 @@
+---
+input_text: |
+  Montanes Grassgebiet mit Buschgruppen. Hang nach Westen abfallend. Steiniger, von Asche dunkel gefärbter Sand- Lateritboden. Begleitflora vielfältig, u.a. Helichrysum spp., Vernonia spp., Gladiolus sp., Echinops gigantea , Berkheya sp., Lippia javani
+raw_completion_output: |2-
+   taxonomy: Angiosperms (Plantae; Tracheophyta; Magnoliophyta; Spermatophyta; Anthophyta)
+     species: Helichrysum spp. (Helichrysum species); Vernonia spp. (Vernonia species); Gladiolus sp. (Gladiolus species); Echinops gigantea ; Berkheya sp. (Berkheya species); Lippia javani
+     habitat: Montane grasslands
+prompt: |+
+  Split the following piece of text into fields in the following format:
+
+  location: <the value for location>
+  environment: <the value for environment>
+  environmental_material: <the value for environmental_material>
+  method: <the value for method>
+
+
+  Text:
+  Montane grasslands
+
+  ===
+
+extracted_object:
+  taxonomy:
+    - AUTO:Angiosperms%20%28Plantae
+    - NCBITaxon:58023
+    - NCBITaxon:3398
+    - NCBITaxon:58024
+    - AUTO:Anthophyta%29
+  species:
+    - AUTO:Helichrysum%20spp.%20%28Helichrysum%20species%29
+    - AUTO:Vernonia%20spp.%20%28Vernonia%20species%29
+    - NCBITaxon:3136809
+    - AUTO:Echinops%20gigantea
+    - NCBITaxon:3136807
+    - AUTO:Lippia%20javani
+  habitat:
+    - location: ENVO:01001808
+      environment: ENVTHES:USLterCV_581
+      environmental_material: ENVTHES:USLterCV_230
+      method: AUTO:Not%20provided%20in%20the%20text
+named_entities:
+  - id: AUTO:Angiosperms%20%28Plantae
+    label: Angiosperms (Plantae
+  - id: NCBITaxon:58023
+    label: Tracheophyta
+  - id: NCBITaxon:3398
+    label: Magnoliophyta
+  - id: NCBITaxon:58024
+    label: Spermatophyta
+  - id: AUTO:Anthophyta%29
+    label: Anthophyta)
+  - id: AUTO:Helichrysum%20spp.%20%28Helichrysum%20species%29
+    label: Helichrysum spp. (Helichrysum species)
+  - id: AUTO:Vernonia%20spp.%20%28Vernonia%20species%29
+    label: Vernonia spp. (Vernonia species)
+  - id: NCBITaxon:3136809
+    label: Gladiolus sp. (Gladiolus species)
+  - id: AUTO:Echinops%20gigantea
+    label: Echinops gigantea
+    original_spans:
+      - 203:219
+  - id: NCBITaxon:3136807
+    label: Berkheya sp. (Berkheya species)
+  - id: AUTO:Lippia%20javani
+    label: Lippia javani
+    original_spans:
+      - 237:249
+  - id: ENVO:01001808
+    label: Montane grasslands
+  - id: ENVTHES:USLterCV_581
+    label: Terrestrial
+  - id: ENVTHES:USLterCV_230
+    label: Grasses
+  - id: AUTO:Not%20provided%20in%20the%20text
+

@@ -1,0 +1,105 @@
+id: http://w3id.org/ontogpt/biodiversity_with_prompt
+name: collection_management
+title: collection_management
+description: >-
+  collection management extraction
+
+imports:
+  - linkml:types
+  - core
+
+default_range: string
+
+classes:
+  CollectionManagement:
+    tree_root: true
+    attributes:
+      taxonomy:
+        range: Taxonomy
+        annotations:
+          annotators: gilda:, sqlite:obo:ncbitaxon
+        multivalued: true
+      species:
+        range: Species
+        annotations:
+          annotators: gilda:, sqlite:obo:ncbitaxon
+        multivalued: true
+      habitat:
+        annotations:
+          annotators: gilda:, sqlite:obo:ncbitaxon
+        multivalued: true
+        range: Habitat
+
+  Habitat:
+    is_a: CompoundExpression
+    attributes:
+      location:
+        range: Location
+      environment:
+        range: Environment
+      environmental_material:
+        range: EnvironmentalMaterial
+      method:
+        range: Method
+
+  Taxonomy:
+    description : List the taxonomy of the organism (e.g., *Panthera*, *Acropora*).  
+    is_a: NamedEntity
+    id_prefixes:
+      - NCBITaxon
+    annotations:
+      prompt.examples: Ursus; Phrynosoma; Acropora; Tetrax; Dendrobates,  
+      annotators: gilda:, sqlite:obo:ncbitaxon
+
+  Species:
+    description : Specify the species name (e.g., *Panthera tigris*, *Acropora cervicornis*).  
+    is_a: NamedEntity
+    id_prefixes:
+      - NCBITaxon
+    annotations:
+      prompt.examples: Ursus maritimus; Phrynosoma platyrhinos; Acropora cervicornis; Tetrax tetrax; Dendrobates auratus,  
+      annotators: gilda:, sqlite:obo:ncbitaxon
+
+  Location:
+    description : Provide a precise geographic location, including region, country, and specific landmarks or biomes (e.g., Great Barrier Reef, Amazon Rainforest, Mojave Desert).  
+    is_a: NamedEntity
+    id_prefixes:
+      - ENVO
+      - ENVTHES
+    annotations:
+      prompt.examples: Svalbard Archipelago, Norway; Mojave Desert, USA; Great Barrier Reef, Australia; Alentejo region, Portugal; Amazon Rainforest, Brazil, 
+      annotators: sqlite:obo:envo, bioportal:envthes
+
+  EnvironmentalMaterial:
+    description : Detail key environmental components related to the organism’s habitat, such as substrates, vegetation, water bodies, or geological features (e.g., coral polyps, mangroves, sandy dunes, tidal channels).  
+    is_a: NamedEntity
+    id_prefixes:
+      - ENVO
+      - ENVTHES
+    annotations:
+      prompt.examples: Sea ice platforms and marine prey; Sandy dunes and dry riverbeds; Coral polyps and reef substrate; Grassland vegetation and seeds; Aquatic plants and river substrates,  
+      annotators: sqlite:obo:envo, bioportal:envthes
+
+  Environment:
+    is_a: NamedEntity
+    description : Describe the natural or adapted habitat of the organism (e.g., coral reefs, tropical rainforests, freshwater lakes, tundra ecosystems).
+    id_prefixes:
+      - ENVO
+      - ENVTHES
+    annotations:
+      prompt.examples: Arctic sea ice and tundra ecosystems; Arid deserts with sparse vegetation and sandy soils; Coral reefs in tropical marine ecosystems; Grasslands and open steppe habitats; Tropical rainforests and lowland streams;rivers
+      annotators: sqlite:obo:envo, bioportal:envthes
+
+  Method:
+    description : List methods used to study the organism, including field techniques, lab analyses, or computational tools (e.g., camera traps, genetic barcoding, satellite telemetry, remote sensing).  
+    is_a: NamedEntity
+    id_prefixes:
+      - ENVO
+      - ENVTHES
+    annotations:
+      prompt.examples: Satellite telemetry and drone surveys; Pitfall traps and eDNA analysis; Underwater transects and photogrammetry; Point count surveys and remote sensing; Audio recording and genetic analysis.
+      annotators: bioportal:envthes
+
+
+
+

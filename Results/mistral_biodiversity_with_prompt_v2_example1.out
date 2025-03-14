@@ -1,0 +1,66 @@
+input_text: |
+  Montanes Grassgebiet mit Buschgruppen. Hang nach Westen abfallend. Steiniger, von Asche dunkel gefärbter Sand- Lateritboden. Begleitflora vielfältig, u.a. Helichrysum spp., Vernonia spp., Gladiolus sp., Echinops gigantea , Berkheya sp., Lippia javani
+raw_completion_output: |2-
+   taxonomy: "Asteraceae (Sunflower family)"
+     species: "Helichrysum spp. (various Helichrysum species); Vernonia spp. (various Vernonia species); Gladiolus sp. (unspecified Gladiolus species); Echinops gigantea; Berkheya sp. (unspecified Berkheya species); Lippia javani"
+     location: "Montanes Grassgebiet (Mountain Grassland Region)"
+     environment: "Steiniger, von Asche dunkel gefärbter Sand- Lateritboden (Stony, ash-dark colored sandy laterite soil)"
+     environment_material: "Steiniger, von Asche dunkel gefärbter Sand- Lateritboden (Stony, ash-dark colored sandy laterite soil)"
+     method: "Not specified in the text"
+prompt: |+
+  From the text below, extract the following entities in the following format:
+
+  taxonomy: <semicolon-separated list of taxonomys>
+  species: <semicolon-separated list of speciess>
+  location: <Provide a precise geographic location, including region, country, and specific landmarks or biomes (e.g., Great Barrier Reef, Amazon Rainforest, Mojave Desert).>
+  environment: <Describe the natural or adapted habitat of the organism (e.g., coral reefs, tropical rainforests, freshwater lakes, tundra ecosystems).>
+  environmental_material: <Describe the natural or adapted habitat of the organism (e.g., coral reefs, tropical rainforests, freshwater lakes, tundra ecosystems).>
+  method: <List methods used to study the organism, including field techniques, lab analyses, or computational tools (e.g., camera traps, genetic barcoding, satellite telemetry, remote sensing).>
+
+
+  Text:
+  Montanes Grassgebiet mit Buschgruppen. Hang nach Westen abfallend. Steiniger, von Asche dunkel gefärbter Sand- Lateritboden. Begleitflora vielfältig, u.a. Helichrysum spp., Vernonia spp., Gladiolus sp., Echinops gigantea , Berkheya sp., Lippia javani
+
+
+  ===
+
+extracted_object:
+  taxonomy:
+    - NCBITaxon:4210
+  species:
+    - AUTO:Helichrysum%20spp.%20%28various%20Helichrysum%20species%29
+    - AUTO:Vernonia%20spp.%20%28various%20Vernonia%20species%29
+    - NCBITaxon:3136809
+    - AUTO:Echinops%20gigantea
+    - NCBITaxon:3136807
+    - AUTO:Lippia%20javani
+  location: ENVTHES:USLterCV_232
+  environment: ENVTHES:10305
+  method: AUTO:Not%20specified%20in%20the%20text
+named_entities:
+  - id: NCBITaxon:4210
+    label: Asteraceae (Sunflower family)
+  - id: AUTO:Helichrysum%20spp.%20%28various%20Helichrysum%20species%29
+    label: Helichrysum spp. (various Helichrysum species)
+  - id: AUTO:Vernonia%20spp.%20%28various%20Vernonia%20species%29
+    label: Vernonia spp. (various Vernonia species)
+  - id: NCBITaxon:3136809
+    label: Gladiolus sp. (unspecified Gladiolus species)
+  - id: AUTO:Echinops%20gigantea
+    label: Echinops gigantea
+    original_spans:
+      - 203:219
+  - id: NCBITaxon:3136807
+    label: Berkheya sp. (unspecified Berkheya species)
+  - id: AUTO:Lippia%20javani
+    label: Lippia javani
+    original_spans:
+      - 237:249
+  - id: ENVTHES:USLterCV_232
+    label: Montanes Grassgebiet (Mountain Grassland Region)
+  - id: ENVTHES:10305
+    label: Steiniger, von Asche dunkel gefärbter Sand- Lateritboden (Stony, ash-dark
+      colored sandy laterite soil)
+  - id: AUTO:Not%20specified%20in%20the%20text
+    label: Not specified in the text
+

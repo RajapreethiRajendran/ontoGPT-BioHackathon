@@ -1,0 +1,54 @@
+input_text: |
+  Montanes Grassgebiet mit Buschgruppen. Hang nach Westen abfallend. Steiniger, von Asche dunkel gefärbter Sand- Lateritboden. Begleitflora vielfältig, u.a. Helichrysum spp., Vernonia spp., Gladiolus sp., Echinops gigantea , Berkheya sp., Lippia javani
+raw_completion_output: |-
+  Here are the extracted entities in the requested format:
+
+  taxonomy: None (no taxonomic information provided)
+  species: Helichrysum spp., Vernonia spp., Gladiolus sp., Echinops gigantea, Berkheya sp., Lippia javanica
+  location: Montanes Grassgebiet (precise location not specified)
+  environment: Alpine or mountainous grassland with diverse vegetation (no specific biome mentioned)
+  environmental_material: None (not applicable)
+  method: None (no information about methods used to study the organisms)
+prompt: |+
+  From the text below, extract the following entities in the following format:
+
+  taxonomy: <semicolon-separated list of taxonomys>
+  species: <semicolon-separated list of speciess>
+  location: <Provide a precise geographic location, including region, country, and specific landmarks or biomes (e.g., Great Barrier Reef, Amazon Rainforest, Mojave Desert).>
+  environment: <Describe the natural or adapted habitat of the organism (e.g., coral reefs, tropical rainforests, freshwater lakes, tundra ecosystems).>
+  environmental_material: <Describe the natural or adapted habitat of the organism (e.g., coral reefs, tropical rainforests, freshwater lakes, tundra ecosystems).>
+  method: <List methods used to study the organism, including field techniques, lab analyses, or computational tools (e.g., camera traps, genetic barcoding, satellite telemetry, remote sensing).>
+
+
+  Text:
+  Montanes Grassgebiet mit Buschgruppen. Hang nach Westen abfallend. Steiniger, von Asche dunkel gefärbter Sand- Lateritboden. Begleitflora vielfältig, u.a. Helichrysum spp., Vernonia spp., Gladiolus sp., Echinops gigantea , Berkheya sp., Lippia javani
+
+
+  ===
+
+extracted_object:
+  taxonomy:
+    - NCBITaxon:32644
+  species:
+    - AUTO:Helichrysum%20spp.%2C%20Vernonia%20spp.%2C%20Gladiolus%20sp.%2C%20Echinops%20gigantea%2C%20Berkheya%20sp.%2C%20Lippia%20javanica
+  location: AUTO:Montanes%20Grassgebiet%20%28precise%20location%20not%20specified%29
+  environment: ENVTHES:10346
+  environmental_material: ENVTHES:List_34
+  method: ENVTHES:USLterCV_693
+named_entities:
+  - id: NCBITaxon:32644
+    label: None (no taxonomic information provided)
+  - id: 
+      AUTO:Helichrysum%20spp.%2C%20Vernonia%20spp.%2C%20Gladiolus%20sp.%2C%20Echinops%20gigantea%2C%20Berkheya%20sp.%2C%20Lippia%20javanica
+    label: Helichrysum spp., Vernonia spp., Gladiolus sp., Echinops gigantea, Berkheya
+      sp., Lippia javanica
+  - id: AUTO:Montanes%20Grassgebiet%20%28precise%20location%20not%20specified%29
+    label: Montanes Grassgebiet (precise location not specified)
+  - id: ENVTHES:10346
+    label: Alpine or mountainous grassland with diverse vegetation (no specific biome
+      mentioned)
+  - id: ENVTHES:List_34
+    label: None (not applicable)
+  - id: ENVTHES:USLterCV_693
+    label: None (no information about methods used to study the organisms)
+
