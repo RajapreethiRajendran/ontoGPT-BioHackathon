@@ -34,7 +34,7 @@ def save_result_to_excel(data):
 
 def main(template_path, df):
     processed_data = []
-    for row in df.iterrows():
+    for index, row in df.iterrows():
         objekt_id = row['objekt_id']
         habitat = row['habitat']
         if len(habitat) > 10:
